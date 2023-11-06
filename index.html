@@ -14,20 +14,44 @@
         <p id="answer"></p>
     </div>
     <script>
-        const numVal = document.getElementById("num-input");
-        const button = document.getElementById("enter");
-        const answer = document.getElementById("answer");
+        const input = document.getElementById("num-input"); // textarea
+        const button = document.getElementById("enter"); // button
+        const answer = document.getElementById("answer"); // p
 
-        let arr = [];
+        function onlyNum(inputString) { // Test if input is a number
+            return /^\d+$/.test(inputString);
+        }
 
-        button.addEventListener('click', function() {
-            if (typeof numVal !== 'number' ) {
-                answer.textContent = "Must enter a number";
+        button.addEventListener('click', function() { // 
+            const numVal = input.value; // Content added to textarea
+
+            answer.textContent = ""; // Clear answer content
+            let arr = []; // Array will contain fizz buzzes to display
+
+            if (onlyNum(numVal) != true) { // Check if input is a number
+                answer.textContent = "Must enter a whole number";
+            } else if (numVal > 999) { // Check if number is < 1000
+                answer.textContent = "Number must be under 1000";
+            } else if (numVal < 1) { // Check if number is positive
+                answer.textContent = "Number must be positive";
             } else {
-                answer.textContent = "Yay";
+                for (let i = 1; i <= numVal; i++) {
+                    if (i % 3 === 0 && i % 5 === 0) { // Is num divisible by 3 and 5
+                        arr.push(" fizz buzz");
+                    } else if (i % 3 === 0) { // Is num divisible by 3
+                        arr.push(" fizz");
+                    } else if (i % 5 === 0) { // Is num divisible by 5
+                        arr.push(" buzz");
+                    } else { // Add the number to the array
+                        arr.push(" " + i);
+                    }
+                }
+
+                answer.textContent = arr; // Display the answer
             }
+
             answer.classList.add("border");
-        })
+        });
     </script>
 </body>
 </html>

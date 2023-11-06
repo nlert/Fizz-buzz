@@ -7,15 +7,18 @@
 html {
     background-color: #253237;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
-    height: 100vh;
+    height: auto;
+    min-height: calc(100vh - 100px);
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 h1 {
@@ -62,7 +65,7 @@ button:hover {
 }
 
 p {
-    margin-top: 1rem;
+    margin: 3rem 20px;
     width: auto;
     max-width: 800px;
     border-radius: 15px;
@@ -71,8 +74,6 @@ p {
     height: auto;
     min-height: 50px;
     color: #9db4c0;
-    margin-right: 20px;
-    margin-left: 20px;
 }
 
 .border {
