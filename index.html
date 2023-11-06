@@ -13,5 +13,21 @@
         <button id="enter">Enter</button>
         <p id="answer"></p>
     </div>
+    <script>
+        const numVal = document.getElementById("num-input");
+        const button = document.getElementById("enter");
+        const answer = document.getElementById("answer");
+
+        let arr = [];
+
+        button.addEventListener('click', function() {
+            if (typeof numVal !== 'number' ) {
+                answer.textContent = "Must enter a number";
+            } else {
+                answer.textContent = "Yay";
+            }
+            answer.classList.add("border");
+        })
+    </script>
 </body>
 </html>
