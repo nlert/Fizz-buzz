@@ -27,7 +27,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
-textarea {
+input {
     height: 100px;
     width: 200px;
     font-size: 70px;
@@ -38,14 +38,20 @@ textarea {
     overflow: hidden;
     padding: 5px;
     color: #9db4c0;
+     
 }
 
-textarea::placeholder {
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input::placeholder {
     color: #394c53;
 }
 
-textarea:focus {
+input:focus {
     outline: none;
+    
 }
 
 button {
