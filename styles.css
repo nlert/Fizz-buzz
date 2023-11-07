@@ -85,3 +85,9 @@ p {
 .border {
     border: 1px #9db4c0 solid;
 }
+
+@media (width < 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
