@@ -83,7 +83,7 @@ p {
 }
 
 .border {
-    border: 1px #9db4c0 solid;
+    border: 3px #9db4c0 solid;
 }
 
 @media (width < 500px) {
