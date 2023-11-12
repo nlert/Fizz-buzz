@@ -6,7 +6,17 @@ function onlyNum(inputString) {
     return /^\d+$/.test(inputString);
 }
 
-button.addEventListener('click', function() { // 
+button.addEventListener('click', () => {
+    fizzBuzz();
+})
+
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        fizzBuzz();
+    }
+});
+
+function fizzBuzz() {
     const numVal = input.value;
 
     answer.textContent = "";
@@ -35,4 +45,4 @@ button.addEventListener('click', function() { //
     }
 
     answer.classList.add("border");
-});
+}
